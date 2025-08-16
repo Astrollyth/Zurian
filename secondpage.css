@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  height: 100vh; /* full height */
+  background: radial-gradient(ellipse, pink, transparent, hotpink) pink;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  background: radial-gradient(ellipse, pink, transparent, hotpink) pink; /* pinkish gradient */
+}

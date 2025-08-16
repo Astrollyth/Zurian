@@ -1,0 +1,333 @@
+@property --a{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+  }
+  @property --p {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 0%;
+  }
+  @property --c1 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #000;
+  }
+  @property --c2 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #000;
+  }
+  
+  html {
+    --s: 80px;
+    --_g: #0000, var(--c1) 2deg calc(var(--a) - 2deg),#0000 var(--a);
+    background: 
+      conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc(-45deg  - var(--a)/2) at top    var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc( 45deg  - var(--a)/2) at top    var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc(-135deg - var(--a)/2) at bottom var(--p) left  var(--p),var(--_g)),
+      conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g)),
+      conic-gradient(from calc( 135deg - var(--a)/2) at bottom var(--p) right var(--p),var(--_g))
+      var(--c2);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    animation: m 2s infinite alternate linear;
+  }
+  
+  @keyframes m {
+    0%,15% {
+      --a: 135deg;
+      --p: 20%;
+      --c1: #3B8183;
+      --c2: #FAD089;
+      background-position: 0 0,var(--s) var(--s);
+    }
+    45%,50% {
+      --a: 90deg;
+      --p: 25%;
+      --c1: #3B8183;
+      --c2: #FAD089;
+      background-position: 0 0,var(--s) var(--s);
+    }
+    50.01%,55% {
+      --a: 90deg;
+      --p: 25%;
+      --c2: #3B8183;
+      --c1: #FAD089;
+      background-position: var(--s) 0,0 var(--s);
+    }
+    85%,100% {
+      --a: 135deg;
+      --p: 20%;
+      --c2: #3B8183;
+      --c1: #FAD089;
+      background-position: var(--s) 0,0 var(--s);
+    }
+  }
+#all {
+    width: 560px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#left {
+    width: 215px;
+    height: 600px;
+    float: left;
+}
+
+#lefttop {
+    background-color: #ebe1dd;
+    width: 215px;
+    height: 290px;
+    margin-bottom: 20px;
+    border: 1px solid #614140;
+    background-image: url('https://i.imgur.com/KjjjwxF.jpg');
+}
+
+#leftbottom {
+    background-color: #ebe1dd;
+    width: 185px;
+    height: 260px;
+    padding: 15px;
+    border: 1px solid #614140;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #a47473;
+}
+
+#leftbottom ul,
+#leftbottom li {
+    list-style-type: none;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: #63a888;
+}
+
+a:hover {
+    color: #a47473;
+}
+
+#right {
+    float: right;
+    width: 325px;
+    height: 600px;
+}
+
+#righttop {
+    background-color: #ebe1dd;
+    width: 295px;
+    height: 325px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #614140;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.content {
+    text-align: justify;
+}
+
+#rightbottom {
+    background-color: #ebe1dd;
+    width: 295px;
+    height: 195px;
+    padding: 15px;
+    border: 1px solid #614140;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+textarea {
+    width: 280px;
+    height: 135px;
+    background-color: #f7f4f2;
+    color: #694a49;
+    padding: 5px;
+    border: 1px solid #80ad99;
+    font-family: serif;
+}
+
+input[type="submit"] {
+    background-color: #eefae1;
+    color: #694a49;
+    border: 1px solid #c2afa7;
+    font-family: serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #80ad99;  
+}
+
+#credit {
+    font-size: 13px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#credit a {
+    color: #c7acab;
+}
+
+#credit a:hover {
+    color: #614140;
+}
+
+
+/* From Uiverse.io by Praashoo7 */ 
+.main {
+  background-color: white;
+  padding: 1em;
+  padding-bottom: 1.1em;
+  border-radius: 15px;
+  margin: 1em;
+}
+
+.loader {
+  display: flex;
+  flex-direction: row;
+  height: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  transform: rotate(180deg);
+  justify-content: right;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+}
+
+.loader:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.currentplaying {
+  display: flex;
+  margin: 1em;
+}
+
+.spotify {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.6em;
+}
+
+.heading {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.loading {
+  display: flex;
+  margin-top: 1em;
+  margin-left: 0.3em;
+}
+
+.load {
+  width: 2px;
+  height: 33px;
+  background-color: limegreen;
+  animation: 1s move6 infinite;
+  border-radius: 5px;
+  margin: 0.1em;
+}
+
+.load:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.load:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.load:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.play {
+  position: relative;
+  left: 0.35em;
+  height: 1.6em;
+  width: 1.6em;
+  clip-path: polygon(50% 50%, 100% 50%, 75% 6.6%);
+  background-color: black;
+  transform: rotate(-90deg);
+  align-self: center;
+  margin-top: 0.7em;
+  justify-self: center;
+}
+
+.albumcover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px; /* optional */
+}
+
+.song {
+  position: relative;
+  transform: rotate(180deg);
+  margin-right: 1em;
+  color: black;
+  align-self: center;
+}
+
+.artist {
+  font-size: 0.6em;
+}
+
+@keyframes move6 {
+  0% {
+    height: 0.2em;
+  }
+
+  25% {
+    height: 0.7em;
+  }
+
+  50% {
+    height: 1.5em;
+  }
+
+  100% {
+    height: 0.2em;
+  }
+}
